@@ -4,10 +4,10 @@ using UnityEngine.UI;
 
 public class NumberWizardController : MonoBehaviour {
 	
-	int min = 1;
+	int min = 0;
 	int max = 1000;
-	int guess = 500;
-	int max_guesses = 8;
+	int guess = -1;
+	int max_guesses = 20;
 	
 	string guessTextFormat = "Is your number higher or lower then {0:#}?";
 	string titleTextFormat = "{0:#} guesses left...";
@@ -16,8 +16,8 @@ public class NumberWizardController : MonoBehaviour {
 	public Text title;
 	
 	// Use this for initialization
-	void Start () {
-		max += 1;				
+	void Start () {		
+		guess = (int) Random.Range(min + 1, max + 1);		
 	}
 	
 	// Update is called once per frame
@@ -44,7 +44,7 @@ public class NumberWizardController : MonoBehaviour {
 		if(max_guesses == 1)
 			Application.LoadLevel("Win");
 		else {
-			guess = (min + max) / 2;					
+			guess = (int) Random.Range(min + 1, max + 1);
 			max_guesses--;
 		}
 	}
