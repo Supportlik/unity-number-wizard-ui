@@ -40,10 +40,12 @@ public class NumberWizardController : MonoBehaviour {
 		Application.LoadLevel("Lose");
 	}	
 	
-	public void NextGuess(){
-		guess = (min + max) / 2;		
-		max_guesses--;
-		if(max_guesses == 0)
+	public void NextGuess(){		
+		if(max_guesses == 1)
 			Application.LoadLevel("Win");
+		else {
+			guess = (min + max) / 2;					
+			max_guesses--;
+		}
 	}
 }
