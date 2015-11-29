@@ -7,7 +7,7 @@ public class NumberWizardController : MonoBehaviour {
 	int min = 0;
 	int max = 1000;
 	int guess = -1;
-	int max_guesses = 20;
+	int max_guesses = 10;
 	
 	string guessTextFormat = "Is your number higher or lower then {0:#}?";
 	string titleTextFormat = "{0:#} guesses left...";
